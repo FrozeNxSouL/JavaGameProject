@@ -62,7 +62,7 @@ public class EnemyManager {
                     if (e.getEnemyFacing()) {
                         g.drawImage(BasherIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x - BASHER_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - BASHER_DRAWYOFFSET), BASHER_WIDTH, BASHER_HEIGHT, null);
                     } else {
-                        g.drawImage(BasherIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + 320 - BASHER_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - BASHER_DRAWYOFFSET), -1 * BASHER_WIDTH, BASHER_HEIGHT, null);
+                        g.drawImage(BasherIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + (int)(1.086956*BASHER_WIDTH)- BASHER_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - BASHER_DRAWYOFFSET), -1 * BASHER_WIDTH, BASHER_HEIGHT, null);
                     }
                 } else if (e instanceof BossDemon) {
                     if (((BossDemon)e).getState() && !((BossDemon)e).isFirstTransform()){
@@ -78,13 +78,13 @@ public class EnemyManager {
                     if (e.getEnemyFacing()) {
                         g.drawImage(WarriorIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x - WARRIOR_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - WARRIOR_DRAWYOFFSET), WARRIOR_WIDTH, WARRIOR_HEIGHT, null);
                     } else {
-                        g.drawImage(WarriorIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + 480 - WARRIOR_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - WARRIOR_DRAWYOFFSET), -1 * WARRIOR_WIDTH, WARRIOR_HEIGHT, null);
+                        g.drawImage(WarriorIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + (int)(1.070234*WARRIOR_WIDTH) - WARRIOR_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - WARRIOR_DRAWYOFFSET), -1 * WARRIOR_WIDTH, WARRIOR_HEIGHT, null);
                     }
                 } else if (e instanceof Goblin) {
                     if (e.getEnemyFacing()) {
                         g.drawImage(GoblinIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x - GOBLIN_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - GOBLIN_DRAWYOFFSET), GOBLIN_WIDTH, GOBLIN_HEIGHT, null);
                     } else {
-                        g.drawImage(GoblinIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + 480 - GOBLIN_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - GOBLIN_DRAWYOFFSET), -1 * GOBLIN_WIDTH, GOBLIN_HEIGHT, null);
+                        g.drawImage(GoblinIMG[e.getEnemyState()][e.getAnimateIDX()], (int) (e.getHitbox().x + (int)(1.070234*GOBLIN_WIDTH) - GOBLIN_DRAWXOFFSET) - Xoffset, (int) (e.getHitbox().y - GOBLIN_DRAWYOFFSET), -1 * GOBLIN_WIDTH, GOBLIN_HEIGHT, null);
                     }
                 }
             } else {

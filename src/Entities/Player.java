@@ -263,14 +263,18 @@ public class Player extends Entities implements Runnable{
     }
 
     public void setBlock(boolean block){
-        this.blocking = block;
-        this.blockStatus = block;
-        this.counterTime = Setting.getCounterChoice();
-        if (blockStatus && counterInteract == 0){
-            LastCounterTime = System.currentTimeMillis();
-            counterInteract = 1;
+        if (!attacking && !Rolling && block) {
+            this.blocking = block;
+            this.blockStatus = block;
+            this.counterTime = Setting.getCounterChoice();
+            if (counterInteract == 0) {
+                LastCounterTime = System.currentTimeMillis();
+                counterInteract = 1;
+            }
         }
-        if (!blocking){
+        else if (!block) {
+            this.blocking = block;
+            this.blockStatus = block;
             counterInteract = 0;
             wasCounter = false;
         }
@@ -720,7 +724,7 @@ public class Player extends Entities implements Runnable{
             if (skillActivating){
                 skillFX.setPosition((int)(hitbox.x),(int)(hitbox.y),true);
             }
-            g.drawImage(animations[action][animationIDX], (int)(hitbox.x + 410 -xOffset) - xlvlOffset,(int)(hitbox.y - yOffset),(int)(-1*Pwidth*Gameclass.SCALE),(int)(Pheight*Gameclass.SCALE),null);
+            g.drawImage(animations[action][animationIDX], (int)(hitbox.x + (int)(0.696331*Pwidth*Gameclass.SCALE) -xOffset) - xlvlOffset,(int)(hitbox.y - yOffset),(int)(-1*Pwidth*Gameclass.SCALE),(int)(Pheight*Gameclass.SCALE),null);
         }
         else if (animationDir==2){
             if (skillActivating){
@@ -730,7 +734,7 @@ public class Player extends Entities implements Runnable{
         }
         else {
             if (facing) {
-                g.drawImage(animations[action][animationIDX], (int)(hitbox.x + 410  -xOffset) - xlvlOffset,(int)(hitbox.y- yOffset),(int)(-1*Pwidth*Gameclass.SCALE),(int)(Pheight*Gameclass.SCALE),null);
+                g.drawImage(animations[action][animationIDX], (int)(hitbox.x + (int)(0.696331*Pwidth*Gameclass.SCALE)  -xOffset) - xlvlOffset,(int)(hitbox.y- yOffset),(int)(-1*Pwidth*Gameclass.SCALE),(int)(Pheight*Gameclass.SCALE),null);
             }
             else {
                 g.drawImage(animations[action][animationIDX], (int)(hitbox.x  -xOffset) - xlvlOffset,(int)(hitbox.y- yOffset),(int)(Pwidth*Gameclass.SCALE),(int)(Pheight*Gameclass.SCALE),null);

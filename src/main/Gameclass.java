@@ -29,13 +29,15 @@ public class Gameclass implements Runnable{
     public static final int TILE_IN_WIDTH = 44;
     public static final int TILE_IN_HEIGHT = 24;
     public static int TILE_SIZE = (int)(TILE_DEFAULT_SIZE * SCALE);
-    public static final int GAME_WIDTH = 1920;
-    public static final int GAME_HEIGHT = 1080;
+    public static int GAME_WIDTH = 1920;
+    public static int GAME_HEIGHT = 1080;
 
     public Gameclass() {
         panel = new Panel(this);
         SCALE = (float)(2.3 * (panel.screenHeight/864.0));
         TILE_SIZE = (int)(TILE_DEFAULT_SIZE * SCALE);
+        GAME_HEIGHT = panel.screenHeight;
+        GAME_WIDTH = panel.screenWidth;
         initClasses();
         gamewindow = new Window(panel);
 

@@ -19,7 +19,7 @@ public class HelpMethod {
         if (y < 0 || y >= Gameclass.GAME_HEIGHT)
             return true;
         float xIndex = x / Gameclass.TILE_SIZE;
-        float yIndex = y / Gameclass.TILE_SIZE ;
+        float yIndex = y / Gameclass.TILE_SIZE;
 
         int value = lvlData[(int)(yIndex) + 20 ][(int) xIndex];
         if (value != 0) {
