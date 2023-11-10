@@ -11,7 +11,7 @@ public class Window extends JFrame {
 
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.add(gamepanel);
-//        jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jframe.setUndecorated(true);
         jframe.setResizable(false);
         jframe.pack();
