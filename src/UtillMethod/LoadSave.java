@@ -148,26 +148,6 @@ public class LoadSave {
                 found = false;
             }
         }
-
-//        BufferedImage img = LoadSprite(file);
-//        BufferedImage tempimg;
-//        int[][] lvlData = new int[img.getHeight() / 16][img.getWidth() / 16];
-//        for (int i=0;i< img.getHeight() / 16;i++){
-//            for (int j = 0;j<img.getWidth() / 16;j++){
-//                tempimg = img.getSubimage(j*16,i*16,16,16);
-//                lvlData[i][j] = 0;
-//                for (int k=0;k<16;k++) {
-//                    for (int l=0;l<16;l++){
-//                        Color color = new Color(tempimg.getRGB(l,k));
-//                        int value1 = color.getRed(),value2 = color.getGreen(),value3= color.getBlue();
-//                        if (value1!=0 || value2!=0 || value3!=0) {
-//                            lvlData[i][j] = i*(img.getWidth() / 16) + j;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
         return lvlData;
     }
 }

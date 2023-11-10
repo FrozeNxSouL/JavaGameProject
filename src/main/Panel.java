@@ -15,7 +15,11 @@ public class Panel extends JPanel {
     }
 
     private void setPanalSize(){
-        setPreferredSize(new Dimension(GAME_WIDTH,GAME_HEIGHT));
+        Toolkit toolkit =  Toolkit.getDefaultToolkit ();
+        Dimension dim = toolkit.getScreenSize();
+        int width = (int) dim.getWidth();
+        int height = (int) dim.getHeight();
+        setPreferredSize(new Dimension(width,height));
     }
 
     public void paintComponent(Graphics g) {
