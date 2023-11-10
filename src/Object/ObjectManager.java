@@ -73,10 +73,8 @@ public class ObjectManager {
                     }
                 } else {
                     if (p.getDir()) {
-                        g.drawRect( (int) (p.getHitbox().x - xLvlOffset - (10 * Gameclass.SCALE)), (int) (p.getHitbox().y - (10 * Gameclass.SCALE)), PROJECTILES_WIDTH, PROJECTILES_HEIGHT);
                         g.drawImage(redBallImg[p.getAnimateIDX()], (int) (p.getHitbox().x - xLvlOffset - (10 * Gameclass.SCALE)), (int) (p.getHitbox().y - (10 * Gameclass.SCALE)), PROJECTILES_WIDTH, PROJECTILES_HEIGHT, null);
                     } else {
-                        g.drawRect( (int) (p.getHitbox().x - xLvlOffset - (10 * Gameclass.SCALE) - PROJECTILES_WIDTH), (int) (p.getHitbox().y - (10 * Gameclass.SCALE)), PROJECTILES_WIDTH, PROJECTILES_HEIGHT);
                         g.drawImage(redBallImg[p.getAnimateIDX()], (int) (p.getHitbox().x - xLvlOffset - (10 * Gameclass.SCALE) - PROJECTILES_WIDTH), (int) (p.getHitbox().y - (10 * Gameclass.SCALE)), PROJECTILES_WIDTH, PROJECTILES_HEIGHT, null);
                     }
                 }

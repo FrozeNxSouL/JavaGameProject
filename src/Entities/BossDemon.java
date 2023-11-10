@@ -42,7 +42,7 @@ public class BossDemon extends Enemy{
     @Override
     protected void checkEnemyHit(Rectangle2D.Float ATKbox, Player player) {
         if (ATKbox.intersects(player.getHitbox()) && player.getCounterInteract()){
-            if (state == 1) {
+            if (state == 1 && enemyState != BOSS_DEMON_CHARGE) {
                 changeState(BOSS_DEMON_HIT);
                 interval = false;
                 AnimateSpeed = 240/getSpriteAmount(enemyType,enemyState);

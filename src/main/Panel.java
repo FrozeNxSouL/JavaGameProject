@@ -8,6 +8,7 @@ import java.awt.*;
 
 public class Panel extends JPanel {
     private Gameclass game;
+    public int screenWidth,screenHeight;
     public  Panel(Gameclass game) {
         setPanalSize();
         this.game = game;
@@ -15,11 +16,11 @@ public class Panel extends JPanel {
     }
 
     private void setPanalSize(){
-        Toolkit toolkit =  Toolkit.getDefaultToolkit ();
+        Toolkit toolkit =  Toolkit.getDefaultToolkit();
         Dimension dim = toolkit.getScreenSize();
-        int width = (int) dim.getWidth();
-        int height = (int) dim.getHeight();
-        setPreferredSize(new Dimension(width,height));
+        screenWidth = (int) dim.getWidth();
+        screenHeight = (int) dim.getHeight();
+        setPreferredSize(new Dimension(screenWidth,screenHeight));
     }
 
     public void paintComponent(Graphics g) {
