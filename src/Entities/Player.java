@@ -298,7 +298,7 @@ public class Player extends Entities implements Runnable{
     public void Blocked() {
         if (currentHealth > 0) {
             this.effect.newEffect(BLOCK, (int) (hitbox.x - xOffset), (int) (hitbox.y), this.facing);
-            AudioPlayer.playEffect((int)Math.floor(Math.random() * (AudioPlayer.BLOCK2 - AudioPlayer.BLOCK1 + 1) + AudioPlayer.BLOCK1));
+            AudioPlayer.playEffect((int)(Math.random() * (AudioPlayer.BLOCK2 - AudioPlayer.BLOCK1 + 1) + AudioPlayer.BLOCK1));
         }
     }
 
