@@ -119,10 +119,10 @@ public class Playing extends States implements StateMethods {
                 enemyManager = new EnemyManager(this, objectManager, LoadSave.GrassLandLevelSpriteEnemy);
             }
             if (firstStart) {
-                player = new Player((float) 1475, (float) 235, (int) (256 * Gameclass.SCALE), (int) (256 * Gameclass.SCALE), this);
+                player = new Player((float)(lvlTileWide*Gameclass.TILE_SIZE*0.167), (float) 235, (int) (256 * Gameclass.SCALE), (int) (256 * Gameclass.SCALE), this);
                 firstStart = false;
             } else if (spawnPoint){
-                player.getHitbox().x = 1475;
+                player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.167);
                 player.setFacing(false);
             } else {
                 player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.85);
@@ -140,7 +140,7 @@ public class Playing extends States implements StateMethods {
                 enemyManager = new EnemyManager(this, objectManager, LoadSave.BlightedForestLevelSpriteEnemy);
             }
             if (spawnPoint) {
-                player.getHitbox().x = 1200;
+                player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.15);
                 player.setFacing(false);
             } else {
                 player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.9);
@@ -158,7 +158,7 @@ public class Playing extends States implements StateMethods {
                 enemyManager = new EnemyManager(this, objectManager, LoadSave.BossMapLevelSpriteEnemy);
             }
             if (spawnPoint) {
-                player.getHitbox().x = 1300;
+                player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.16);
                 player.setFacing(false);
             } else {
                 player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.85);
