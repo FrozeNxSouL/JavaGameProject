@@ -119,7 +119,7 @@ public class Playing extends States implements StateMethods {
                 enemyManager = new EnemyManager(this, objectManager, LoadSave.GrassLandLevelSpriteEnemy);
             }
             if (firstStart) {
-                player = new Player((float)(lvlTileWide*Gameclass.TILE_SIZE*0.167), (float) 235, (int) (256 * Gameclass.SCALE), (int) (256 * Gameclass.SCALE), this);
+                player = new Player((float)(lvlTileWide*Gameclass.TILE_SIZE*0.167), (float) 0, (int) (256 * Gameclass.SCALE), (int) (256 * Gameclass.SCALE), this);
                 firstStart = false;
             } else if (spawnPoint){
                 player.getHitbox().x = (float)(lvlTileWide*Gameclass.TILE_SIZE*0.167);
@@ -236,7 +236,6 @@ public class Playing extends States implements StateMethods {
             objectManager.draw(g,XlvlOffset);
             levelFront.Drawmap(g, XlvlOffset);
             levelObj.Drawmap(g, XlvlOffset);
-            levelFloorCollision.Drawmap(g, XlvlOffset);
             if (player.isCombatstatus() || player.isSkillActivating()) {
                 player.drawUI(g, enemyManager);
             }

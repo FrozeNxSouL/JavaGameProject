@@ -742,8 +742,6 @@ public class Player extends Entities implements Runnable{
         }
         skillFX.drawEffect(g,xlvlOffset);
         effect.drawEffect(g,xlvlOffset);
-        drawHitbox(g,xlvlOffset);
-        drawAttackBox(g, xlvlOffset);
     }
 
     public void drawUI(Graphics g,EnemyManager enemyManager) {
