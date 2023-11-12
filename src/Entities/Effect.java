@@ -31,52 +31,52 @@ public class Effect extends Entities {
         switch (this.AnimateAction){
             case SKILL_BUFF -> {
                 if (facing) {
-                    x = Xpostion + 20 +(int)(125*1.9);
-                    width = (int) (-256*1.9);
+                    x = Xpostion + (int)(120*Gameclass.SCALE);
+                    width = (int) (-212*Gameclass.SCALE);
                 } else {
-                    x = Xpostion + 20 - (int)(125*1.9);
-                    width = (int) (256*1.9);
+                    x = Xpostion - (int)(95*Gameclass.SCALE);
+                    width = (int) (212*Gameclass.SCALE);
                 }
-                height = 350;
-                y = Yposition - 130;
+                height = (int) (152*Gameclass.SCALE);
+                y = Yposition - (int) (56*Gameclass.SCALE);
                 AnimateSpeed = 9;
             }
             case COUNTER -> {
                 if (facing) {
-                    x = Xpostion + (int) (400 * 0.75 * 0.5) + 60 * Gameclass.SCALE;
-                    width = (int) (-400 * 0.75);
+                    x = Xpostion + (int) (65*Gameclass.SCALE) + 60 * Gameclass.SCALE;
+                    width = (int) (-130*Gameclass.SCALE);
                 } else {
                     x = Xpostion + 60 * Gameclass.SCALE;
-                    width = (int) (400 * 0.75);
+                    width = (int) (130*Gameclass.SCALE);
                 }
                 y = Yposition - 105 * Gameclass.SCALE;
-                height = (int) (700 * 0.75);
+                height = (int) (230*Gameclass.SCALE);
                 AnimateSpeed = 5;
                 AnimateTick=0;
                 AnimateIDX=0;
             }
             case DASH -> {
                 if (facing){
-                    x=Xpostion + (int)(256*0.5) + 80 * Gameclass.SCALE;
-                    width = -256;
+                    x=Xpostion + (int)((112*Gameclass.SCALE) * 0.5) + 80 * Gameclass.SCALE;
+                    width = -(int)(112*Gameclass.SCALE);
                 } else {
                     x=Xpostion + 50 * Gameclass.SCALE;
-                    width = 256;
+                    width = (int)(112*Gameclass.SCALE);
                 }
                 y=Yposition - 0 * Gameclass.SCALE;
-                height = 256;
-                AnimateSpeed = 50;
+                height = (int)(112*Gameclass.SCALE);
+                AnimateSpeed = 35;
             }
             case BLOCK -> {
                 if (facing){
-                    x=Xpostion + (int)(256*0.5) + (int)Math.floor(Math.random() * (75 - (55) + 1) + 55) * Gameclass.SCALE;
-                    width = -256;
+                    x=Xpostion + (int)((112*Gameclass.SCALE)*0.5) + (int)Math.floor(Math.random() * (75 - (55) + 1) + 55) * Gameclass.SCALE;
+                    width = -(int)(112*Gameclass.SCALE);
                 } else {
                     x=Xpostion + (int)Math.floor(Math.random() * (75 - (55) + 1) + 55) * Gameclass.SCALE;
-                    width = 256;
+                    width = (int)(112*Gameclass.SCALE);
                 }
                 y=Yposition - (int)Math.floor(Math.random() * (65 - (35) + 1) + 35) * Gameclass.SCALE;
-                height = 256;
+                height = (int)(112*Gameclass.SCALE);
                 AnimateSpeed = 30;
             }
         }
@@ -107,12 +107,13 @@ public class Effect extends Entities {
 
     public void setPosition(int X,int Y,boolean facing){
         if (facing) {
-            x = X + 20 +(int)(125*1.9);
-            width = (int) (-256*1.9);
+            x = X + (int)(120*Gameclass.SCALE);
+            width = (int) (-212*Gameclass.SCALE);
         } else {
-            x = X + 20 - (int)(125*1.9);
-            width = (int) (256*1.9);
+            x = X - (int)(95*Gameclass.SCALE);
+            width = (int) (212*Gameclass.SCALE);
         }
-        y = Y - 130;
+        height = (int) (152*Gameclass.SCALE);
+        y = Y - (int) (56*Gameclass.SCALE);
     }
 }
