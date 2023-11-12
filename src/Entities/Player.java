@@ -119,7 +119,7 @@ public class Player extends Entities implements Runnable{
         effect = new Effect(x,y);
         skillFX = new Effect(x,y);
         loadanimation();
-        initHitbox(x+xOffset,y+yOffset,40,170);
+        initHitbox(x+xOffset,y+yOffset,18*Gameclass.SCALE,74*Gameclass.SCALE);
         initAttackBox();
         this.facing = false;
         energyRegen = new Thread(this);
@@ -127,7 +127,7 @@ public class Player extends Entities implements Runnable{
         this.currentSkill = 0;
     }
     private void initAttackBox(){
-        attackBox = new Rectangle2D.Float(hitbox.x,hitbox.y,150,250);
+        attackBox = new Rectangle2D.Float(hitbox.x,hitbox.y,65*Gameclass.SCALE,109*Gameclass.SCALE);
     }
 
     private void loadanimation() {
@@ -370,27 +370,27 @@ public class Player extends Entities implements Runnable{
             if (!this.RollStatus && !TwoDirStatus) {
                 if (ATKCount == 1) {
                     action = SWORDONE;
-                    hitWidth = 180;
-                    hitHeight = 210;
-                    hitY = hitbox.y - 50;
+                    hitWidth = 78*Gameclass.SCALE;
+                    hitHeight = 92*Gameclass.SCALE;
+                    hitY = hitbox.y - 21*Gameclass.SCALE;
                     damage = 4;
                 } else if (ATKCount == 2) {
                     action = SWORDTWO;
-                    hitWidth = 200;
-                    hitHeight = 400;
-                    hitY = hitbox.y-200;
+                    hitWidth = 87*Gameclass.SCALE;
+                    hitHeight = 174*Gameclass.SCALE;
+                    hitY = hitbox.y-87*Gameclass.SCALE;
                     damage = 5;
                 } else if (ATKCount == 3) {
                     action = SWORDTHREE;
-                    hitWidth = 310;
-                    hitHeight = 150;
-                    hitY = hitbox.y-30;
+                    hitWidth = 135*Gameclass.SCALE;
+                    hitHeight = 65*Gameclass.SCALE;
+                    hitY = hitbox.y-13*Gameclass.SCALE;
                     damage = 4;
                 } else if (ATKCount == 4) {
                     action = SWORDFOUR;
-                    hitWidth = 250;
-                    hitHeight = 250;
-                    hitY = hitbox.y - 100;
+                    hitWidth = 109*Gameclass.SCALE;
+                    hitHeight = 109*Gameclass.SCALE;
+                    hitY = hitbox.y - 43*Gameclass.SCALE;;
                     damage = 8;
                 }
                 if (facing) {
@@ -486,7 +486,6 @@ public class Player extends Entities implements Runnable{
                 for (int i = 32; i >= 4; i -= 4) {
                     if (CanMoveHere(hitbox.x, hitbox.y + i * 2, hitbox.width, hitbox.height, lvlFloorCollision)) {
                         hitbox.y += i;
-//                    System.out.println("down  "+i);
                         break;
                     }
                 }
@@ -495,7 +494,6 @@ public class Player extends Entities implements Runnable{
                     if (CanMoveHere(hitbox.x + Xtemp, hitbox.y - i * 2, hitbox.width, hitbox.height, lvlFloorCollision)) {
                         hitbox.x += Xtemp;
                         hitbox.y -= i;
-//                    System.out.println("up  "+i);
                         break;
                     }
                 }
@@ -658,13 +656,13 @@ public class Player extends Entities implements Runnable{
         for (Enemy e:enemylists) {
             range =  (int)(Math.abs(hitbox.x - e.hitbox.x));
             if (e instanceof BossDemon){
-                if (range <= 550*1.5 && e.getActive()) {
+                if (range <= 240*Gameclass.SCALE*1.5 && e.getActive()) {
                     this.CombatStatus = true;
                     combatFacing = (hitbox.x - e.hitbox.x) > 0;
                     return;
                 }
             } else {
-                if (range <= 550 && e.getActive()) {
+                if (range <= 240*Gameclass.SCALE && e.getActive()) {
                     this.CombatStatus = true;
                     combatFacing = (hitbox.x - e.hitbox.x) > 0;
                     return;
@@ -693,7 +691,6 @@ public class Player extends Entities implements Runnable{
         }
         updateanimationTick();
         setAnimations();
-//        updateHitbox();
     }
 
     private void checkAttack() {
@@ -745,6 +742,8 @@ public class Player extends Entities implements Runnable{
         }
         skillFX.drawEffect(g,xlvlOffset);
         effect.drawEffect(g,xlvlOffset);
+        drawHitbox(g,xlvlOffset);
+        drawAttackBox(g, xlvlOffset);
     }
 
     public void drawUI(Graphics g,EnemyManager enemyManager) {
