@@ -236,6 +236,7 @@ public class Playing extends States implements StateMethods {
             objectManager.draw(g,XlvlOffset);
             levelFront.Drawmap(g, XlvlOffset);
             levelObj.Drawmap(g, XlvlOffset);
+            levelFloorCollision.Drawmap(g, XlvlOffset);
             if (player.isCombatstatus() || player.isSkillActivating()) {
                 player.drawUI(g, enemyManager);
             }
